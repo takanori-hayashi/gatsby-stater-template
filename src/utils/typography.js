@@ -1,15 +1,36 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
 
+const fonts = ['-apple-system', 'Roboto', 'Noto Sans JP', 'sans-serif']
+
 Wordpress2016.overrideThemeStyles = () => {
   return {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    "h1": {
+      fontFamily: `-apple-system, Roboto, 'Noto Sans JP', sans-serif`
+    }
   }
 }
 
-delete Wordpress2016.googleFonts
+Wordpress2016.headerFontFamily = fonts
+Wordpress2016.bodyFontFamily = fonts
+
+Wordpress2016.googleFonts = [
+  {
+    name: 'Noto Sans JP',
+    styles: ['400'],
+  },
+  {
+    name: 'Noto Sans JP',
+    styles: ['700'],
+  },
+  {
+    name: 'Roboto',
+    styles: ['400']
+  }
+]
 
 const typography = new Typography(Wordpress2016)
 
